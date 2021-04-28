@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Virtual</title>
+
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <div class="principal">
+        <div class="cabecalho">
+            <div class="logo-cabecalho">
+   
+            <table>
+                <tr>
+                  <td><img  width="400" height="300" src="logoNOVA.png"></td>
+                  
+                 
+                </tr>
+               
+              </table>
+        
+               
+            </div>
+            
+            <div class="pesquisa">
+                <input type="text" />
+                <input type="submit" value="Pesquisar" />
+            </div>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="Menu.html">Início</a></li>
+                <li><a href="./Produtos.html">Cardápio</a></li>
+                <li><a href="./Comentarios.html">Contato</a></li>
+                <li><a href="./Quem somos.html">Quem somos</a></li>
+                <li><a href="./Loja virtual.html">Loja Virtual</a></li>
+            </ul>
+        </nav>
+        <div class="corpo">
+        
+            <div class="artigos">
+              
+                    <script type="text/javascript">
+                        total = 0.00;
+                
+                function adiciona(id) {
+                  calcula(id, "adicao");
+                }
+                
+                function remove(id) {
+                  calcula(id, "subtracao");
+                }
+                
+                function calcula(id, operacao) {
+                  nomeid = "nome" + id;
+                  precoid = "preco" + id;
+                  qtdid = "qtd" + id;
+                
+                  nome = document.getElementById(nomeid).innerHTML;
+                
+                  preco = document.getElementById(precoid).innerHTML;
+                  preco = textoParaFloat(preco);
+                
+                  qtd = document.getElementById(qtdid).innerHTML;
+                  qtd = parseInt(qtd);
+                
+                      
+                
+                  if (operacao == "adicao") {
+                    total = total + preco;
+                    qtd = qtd + 1;
+                    var s = document.getElementById("exibe").innerHTML;
+                   
+                    if (s.indexOf(nome) == -1) {
+                    
+                      document.getElementById("exibe").innerHTML += nome + "(<a class='"+nome+"'>" + qtd + "</a>)<br>";
+                    } else {
+                      document.getElementsByClassName(nome)[0].innerHTML=qtd;
+                    }
+                  } else {
+                    
+                    var s = document.getElementById("exibe").innerHTML;
+                   
+                    if (s.indexOf(nome) == -1) {
+                    
+                      s += nome + "(<a class='"+nome+"'>" + qtd-1 + "</a>)<br>";
+                    } else {
+                      if(qtd>1){     
+                      document.getElementsByClassName(nome)[0].innerHTML=qtd-1;
+                        }
+                      else{
+                      
+                    document.getElementById("exibe").innerHTML=s.replace(nome + "(<a class=\""+nome+"\">" + qtd + "</a>)<br>"," ");
+                      
+                      }}
+                    total = total - preco;
+                    qtd = qtd - 1;
+                    
+                    
+                  }
+                  
+                
+                  document.getElementById(qtdid).innerHTML = qtd;
+                
+                  document.getElementById("total").innerHTML = floatParaTexto(total);
+                }
+                
+                function textoParaFloat(texto) {
+                  texto = texto.replace(".", "");
+                  texto = texto.replace(",", "."); 
+                  numero = parseFloat(texto);
+                  return numero;   
+                }
+                
+                
+                
+               
+                
+                function floatParaTexto(numero) {
+                  numero = numero.toFixed(2);
+                
+                  texto = numero.toString();
+                  texto = texto.replace(".", ","); 
+                
+                  return texto;
+                }
+                
+                
+                
+               
+                    </script>
+                    </head>
+                <body>
+                    <table>
+                
+                        <td class="prodtd">
+                  <tr>
+
+                   <form>
+                    <section>
+                      <div class="container">
+                          <div class="card">
+                              <img src="Brigadeiro meio amargo.jpg">
+                              
+                              <div id="nome1" class="nomeprod"><a ><h4>Brigadeiro meio amargo</h4></a></div>
+                                  Brigadeiro meio amargo é um sucesso,
+                                  muito saboroso,<br> com cacau 
+                                 e chocolate...
+                                 <br><br>
+                                  <div id="preco1" class="preco"> 02,50 </div>
+                                  <br>
+                                </td>
+                                
+
+                                  <input  type="button" class="button-color" value="-" onclick="remove(1)">
+                                  <span id="qtd1">0</span> 
+                                  <input type="button" class="button-color" value="+" onclick="adiciona(1)">
+                            
+                                </td>
+                              </tr>
+                          </div>
+                  </section>
+
+                  <section>
+                    <div class="container">
+                        <div class="card">
+                            <img src="Brigadeiro branco de uva .jpg">
+                            
+                            <div id="nome2" class="nomeprod"><a ><h4>Brigadeiro branco com uva</h4></a></div>
+                            <p>Esse docinho tem um sabor maravilhoso de leite ninho com o recheio refrescante da uva, não tem como não amar.
+                                <div id="preco2" class="preco">02,50</div>
+                                <br>
+                              </td>
+                              
+                                <input  type="button" class="button-color" value="-" onclick="remove(2)">
+                                <span id="qtd2">0</span> 
+                                <input type="button" class="button-color" value="+" onclick="adiciona(2)">
+                          
+                              </td>
+                            </tr>
+                        </div>
+                </section>
+                
+                <section>
+                  <div class="container">
+                      <div class="card">
+                          <img src="brigadewiro de amendoas.jpg">
+                          
+                          <div id="nome3" class="nomeprod"><a ><h4>Brigadeiro de amêndoas</h4></a></div>
+                          <p>Imagina pressentia a pessoa amada com uma caixa deliciosa de brigadeiro de amêndoas, além de muito gostoso, é uma lindeza.
+                            
+                              <div id="preco3" class="preco">02,50</div>
+                              <br>
+                            </td>
+                            
+                              <input  type="button" class="button-color" value="-" onclick="remove(3)">
+                              <span id="qtd3">0</span> 
+                              <input type="button" class="button-color" value="+" onclick="adiciona(3)">
+                        
+                            </td>
+                          </tr>
+                      </div>
+              </section>
+                
+              <section>
+                <div class="container">
+                    <div class="card">
+                        <img src="brigadeiro paçoca.jpg">
+                        
+                        <div id="nome4" class="nomeprod"><a ><h4>Brigadeiro de paçoca</h4></a></div>
+                        <p>Brigadeiro de paçoca além de ser uma delícia proteica para depois do treino, 
+                          pode também ser servida nas Festas Juninas.
+                          
+                            <div id="preco4" class="preco">02,50</div>
+                            <br>
+                          </td>
+                          
+                            <input  type="button" class="button-color" value="-" onclick="remove(4)">
+                            <span id="qtd4">0</span> 
+                            <input type="button" class="button-color" value="+" onclick="adiciona(4)">
+                      
+                          </td>
+                        </tr>
+                    </div>
+            </section>
+
+            <section>
+              <div class="container">
+                  <div class="card">
+                      <img src="torta brigadeiro-com-morango.jpg">
+                      
+                      <div id="nome4" class="nomeprod"><a ><h4>Torta de brigadeiro com morango</h4></a></div>
+                      <p>Você vai querer essa delicia! Essa torta de brigadeiro com morango e para você se deliciar com a união da família e dos amigos.
+                        
+                          <div id="preco5" class="preco">35,00</div>
+                          <br>
+                        </td>
+                        
+                          <input  type="button" class="button-color" value="-" onclick="remove(5)">
+                          <span id="qtd5">0</span> 
+                          <input type="button" class="button-color" value="+" onclick="adiciona(5)">
+                    
+                        </td>
+                      </tr>
+                  </div>
+          </section>
+                
+          <section>
+            <div class="container">
+                <div class="card">
+                    <img src="torta-brigadeiro-cereja.jpg">
+                    
+                    <div id="nome6" class="nomeprod"><a ><h4>Torta de brigadeiro com cereja</h4></a></div>
+                    <p>Uma verdadeira delícia doce mais que especial! Essa torta de brigadeiro 
+                      
+                        <div id="preco6" class="preco">35,00</div>
+                        <br>
+                      </td>
+                      
+                        <input  type="button" class="button-color" value="-" onclick="remove(6)">
+                        <span id="qtd6">0</span> 
+                        <input type="button" class="button-color" value="+" onclick="adiciona(6)">
+                  
+                      </td>
+                    </tr>
+                </div>
+        </section>
+
+        <section>
+          <div class="container">
+              <div class="card">
+                  <img src="torta-de-brigadeiro-e-nozes-39856-1024x752.jpg">
+                  
+                  <div id="nome7" class="nomeprod"><a ><h4>Torta de brigadeiro e nozes</h4></a></div>
+                  <p>Torta de brigadeiro com nozes é uma delicia para sua sobremesa, experimente essa delicia. 
+                    
+                      <div id="preco7" class="preco">35,00</div>
+                      <br>
+                    </td>
+                    
+                      <input  type="button" class="button-color" value="-" onclick="remove(7)">
+                      <span id="qtd7">0</span> 
+                      <input type="button" class="button-color" value="+" onclick="adiciona(7)">
+                
+                    </td>
+                  </tr>
+              </div>
+      </section>
+                 
+        <section>
+          <div class="container">
+              <div class="card">
+                  <img src="torta-brigadeiro-coco.jpg">
+                  
+                  <div id="nome8" class="nomeprod"><a ><h4>Torta de brigadeiro com coco</h4></a></div>
+                  <p>Torta de brigadeiro com coco uma explosão de sabor que você não poder perder, tenho certeza que você vai amar.
+                    
+                      <div id="preco8" class="preco">35,00</div>
+                      <br>
+                    </td>
+                    
+                      <input  type="button" class="button-color" value="-" onclick="remove(8)">
+                      <span id="qtd8">0</span> 
+                      <input type="button" class="button-color" value="+" onclick="adiciona(8)">
+                
+                    </td>
+                  </tr>
+              </div>
+      </section>
+              
+                </tr>
+              
+              </table>
+              
+              
+              
+              <div class="espacamento">
+                  
+             
+              </div>
+             </div>
+              <div class="barra-lateral">
+              <div class="espacamento">
+                  <div class="Carrinho">
+   
+                      <center>
+                      <h3>Carrinho</h3>
+                   
+                     <table>
+                      <td align="center" id="exibe"></td>
+                      <hr>
+                     </table>
+                          <hr>
+                          <b>Total: <span id="total">0,00<span></b> 
+                          
+                  </center>
+                  <script>
+                  function calcular(){
+                    var resultado         = document.getElementById("pagar");
+                    var debito            = document.getElementById("debito");
+                    var creditoParcelado  = document.getElementById("parcelado");
+                    var credito           = document.getElementById("semparcelas");
+                    var desconto          = 0;
+                    
+                    if(total>15){
+                      if(creditoParcelado.checked){
+                        desconto = total*0.05; 
+                        total = total*0.95;
+                  
+                      }
+
+                      else if(total-1)
+                  
+                      if(credito.checked){
+                        desconto = total*0.20;
+                        total= total*0.80;
+                      }
+                  
+                      if(debito.checked){
+                        desconto = total*0.25;
+                        total = total*0.75
+                      }
+
+                     
+                    }
+                    
+                    resultado.value = "Desconto:"+desconto+".Pagar:"+total;
+                  }
+                </script>
+                  
+                  <div>
+                  
+                  </div>
+                  <div>
+                    <p>Qual sua forma de pagamento?</p>
+                    <input type="radio" name ="pagamento" id="debito" value="debito"> 
+                    <label for="debito"> Débito </label>
+                    <br>
+                    <input type="radio" name="pagamento" id="parcelado" value="parcelado"> 
+                    <label for="parcelado"> Crédito parcelado </label>
+                    <br>
+                    <input type="radio" name="pagamento" id="semparcelas" value="semparcelas"> 
+                    <label for="semparcelas"> Crédito sem parcelas</label>
+                    <a href="http://www.sicadi.com.br/mhouse/boleto/boleto3.php?numero_banco=341-7&local_pagamento=PAG%C1VEL+EM+QUALQUER+BANCO+AT%C9+O+VENCIMENTO&cedente=Emes+Doces+Gourmet&data_documento=29%2F04%2F2021&numero_documento=DF+00113&especie=&aceite=N&data_processamento=29%2F04%2F2021&uso_banco=&carteira=164&especie_moeda=Real&quantidade=&valor=&vencimento=29%2F04%2F2021&agencia=0012&codigo_cedente=20231-9&meunumero=00010435&valor_documento=100%2C00&instrucoes=Taxa+de+visita+de+suporte%0D%0AAp%F3s+o+vencimento+R%24+0%2C80+ao+dia&mensagem1=&mensagem2=&mensagem3=ATEN%C7%C3O%3A+N%C3O+RECEBER+AP%D3S+1+DIAS+DO+VENCIMENTO&sacado=&Submit=Enviar"><h4>Boleto</h4></a>
+                  </div>
+                  <div>
+                    
+                     
+                    
+                    <p>Desconto e valor a pagar: </p>
+                    <input  id="pagar" name="pagar">
+                    <input id="botao1" type="button"class="button-color" value="Calcular" onclick="calcular()">
+                    <button type="reset"class="button-color">Limpar</button>
+                    
+                  </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+                   </form>
+      
+        <div class="rodape">
+            Emes Doces Gourmet
+        </div>
+    </div>
+</body>
+</html>
+

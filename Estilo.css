@@ -1,0 +1,274 @@
+body,
+html{
+	margin:  0; 
+	padding: 0;
+	font-size:18px;
+}
+body{
+	background: bisque; 
+	background-size:100%;
+	background-attachment:fixed;
+}
+a, a img{
+	text-decoration:none;
+	border:none;
+}
+
+
+.principal{
+	width: 960px;
+	color: #444;
+	margin: 0 auto;
+	font-family:sans-serif;
+	
+}
+.cabecalho, 
+.logo, 
+.rodape,
+.menu{
+	width:100%;
+	display:block;
+	clear:both;
+}
+.cabecalho{
+	height: 100px
+}
+.logo-cabecalho{
+	align-items: center;
+	
+	
+}
+
+.pesquisa{
+	float:right;
+	
+}
+.menu{
+	background-color: rgb(255, 213, 162);
+}
+.menu ul li, 
+.menu ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.menu ul li{
+	display:inline-block;
+}
+.menu ul li a{
+	display:block;
+	color:#fff;
+	padding:12px 19px;
+}
+.corpo{
+	position:relative;
+	overflow:hidden;
+}
+.artigos{
+	float:left;
+}
+.artigos, .artigos:before{
+	width:70%;
+}
+
+
+.artigos:before{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	background:#fff;
+	z-index:-1;
+	content:'';
+}
+.barra-lateral{
+	float:right;
+}
+.barra-lateral, .barra-lateral:before{
+	width:30%;
+}
+.barra-lateral:before{
+   content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+	right:0;
+    z-index: -1;
+    background: #f1f1f1;
+}
+.espacamento{
+	padding:20px;
+}
+.rodape{
+	padding:20px;
+	text-align:center;
+}
+
+section .container .card{
+    width: 250px;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25;
+}
+section{
+	display:inline-block;
+
+}
+
+section .container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+ 
+section .container .card img{
+    width: 339px;
+    height: 220px;
+}
+ 
+section .container .card h4{
+    font-weight: 600;
+}
+ 
+section .container .card p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+}
+ 
+section .container .card a{
+    font-weight: 500;
+    text-decoration: none;
+    color: #ab25b8;
+}
+
+
+.carousel input {
+  position: absolute;
+  left: -10000px;
+}
+.carousel {
+	width: 80%;
+	height: 80%;
+	margin: 0 auto;
+  }
+  
+  .carousel__stage {
+	overflow: hidden;
+	font-size: 0;
+	white-space: nowrap;
+	width: 100%;
+	height: 100%;
+	transition: text-indent 500ms;
+	position: relative;
+  }
+  
+  .carousel__item {
+	display: inline-block;
+	text-indent: 0;
+	width: 100%;
+	height: 100%;
+  }
+  
+  .carousel__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+
+  .carousel__control {
+	display: none;
+	position: absolute;
+	top: 50%;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.3);
+	z-index: 1;
+	font-size: 1rem;
+	padding: 20px;
+	cursor: pointer;
+  }
+  
+  .carousel__prev {
+	left: 0;
+  }
+  
+  .carousel__prev::after {
+	content: ' << ';
+	display: inline-block;
+  }
+  
+  .carousel__next {
+	right: 0;
+  }
+  
+  .carousel__next::after {
+	content: ' >> ';
+	display: inline-block;
+  }
+
+  #carousel1:checked ~ .carousel__stage {
+	text-indent: 0;
+  }
+  
+  #carousel2:checked ~ .carousel__stage {
+	text-indent: -100%;
+  }
+  
+  #carousel3:checked ~ .carousel__stage {
+	text-indent: -200%;
+  }
+  
+  #carousel4:checked ~ .carousel__stage {
+	text-indent: -300%;
+  }
+
+	
+
+#carousel__item{
+	width: 100%;
+	height: 100%;
+	border-width: 33px;
+}
+#carousel1:checked ~ .carousel__stage .carousel__item:nth-child(1) .carousel__control,
+#carousel2:checked ~ .carousel__stage .carousel__item:nth-child(2) .carousel__control,
+#carousel3:checked ~ .carousel__stage .carousel__item:nth-child(3) .carousel__control,
+#carousel4:checked ~ .carousel__stage .carousel__item:nth-child(4) .carousel__control {
+  display: block;
+  
+}
+
+.input{
+	color: darkmagenta;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.input{
+	display: flex;
+}
+
+
+#produtos {
+    display: flex;
+}
+
+img {
+    width: 300px;
+}
+
+.textoColuna{
+	padding: 13%;
+}
+
+.button-color{
+	background-color: rgb(255, 213, 162);
+}
+
+.button-color:hover{
+	background-color: bisque;
+}
